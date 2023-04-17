@@ -45,10 +45,11 @@ export default function MainBody() {
             <TabContext value={tabId}>
               <Box>
                 <Tabs 
+                  value={tabId}
                   onChange={handleChange} 
                   aria-label="Tabs"
-                  indicatorColor="#f00"
-                  textColor='#f00'
+                  indicatorColor='inherit'
+                  textColor='inherit'
                 >
                   <MainTab label="Deposit" value="1" sx={{backgroundColor : (tabId == '1') ? 'rgba(54, 210, 205)' : 'transparent'}}/>
                   <MainTab label="Withdraw" value="2" sx={{backgroundColor : (tabId == '2') ? 'rgba(54, 210, 205)' : 'transparent'}}/>
