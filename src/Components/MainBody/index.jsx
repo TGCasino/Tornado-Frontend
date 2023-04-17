@@ -1,20 +1,18 @@
 import React, {useState} from 'react';
 import {
   Box,
-  Button,
-  Tab,
   Tabs
 } from '@mui/material';
 import { 
   Wrapper1,
   Wrapper2,
+  Wrapper2Box,
   ButtonStyle,
   MainTab,
   MainTabPanel
 } from './styled';
 import {
   TabContext,
-  TabPanel
 } from '@mui/lab';
 import Deposit from '../Deposit';
 import Withdraw from '../Withdraw';
@@ -27,30 +25,33 @@ export default function MainBody() {
     setTabId(newValue);
   };
 
+  const handleConnect = (event) => {
+    setConnected(true);
+  };
+
   return (
     <>
     {
-      connected ? 
+      !connected ? 
       (
-        <Wrapper1 
-          sx={{ width: {lg: '60%', md : '70%', sm: '80%', xs : '90%'}}}
-        >
-          <ButtonStyle>Wallet Connect</ButtonStyle>
+        <Wrapper1>
+          <ButtonStyle onClick={handleConnect}>Wallet Connect</ButtonStyle>
         </Wrapper1> 
       ) 
       :
       (
         <Wrapper2>
-          <Box sx={{ width: '100%', typography: 'body1', textAlign:'center' }}>
+          <Wrapper2Box>
             <TabContext value={tabId}>
               <Box>
                 <Tabs 
                   onChange={handleChange} 
                   aria-label="Tabs"
-                  indicatorColor="secondary"
+                  indicatorColor="#f00"
+                  textColor='#f00'
                 >
-                  <MainTab label="Deposit" value="1"/>
-                  <MainTab label="Withdraw" value="2"/>
+                  <MainTab label="Deposit" value="1" sx={{backgroundColor : (tabId == '1') ? 'rgba(54, 210, 205)' : 'transparent'}}/>
+                  <MainTab label="Withdraw" value="2" sx={{backgroundColor : (tabId == '2') ? 'rgba(54, 210, 205)' : 'transparent'}}/>
                 </Tabs>
               </Box>
               <MainTabPanel value="1">
@@ -60,7 +61,7 @@ export default function MainBody() {
                 <Withdraw />
               </MainTabPanel>
             </TabContext>
-          </Box>      
+          </Wrapper2Box>      
         </Wrapper2>
       )
     }

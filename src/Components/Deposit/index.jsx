@@ -21,8 +21,8 @@ export default function Deposit() {
       <Typography variant='h5' sx={{fontWeight : 'bold'}}>Balance : {balance} GRM</Typography>
       <Box sx={{width : '100%', margin : '30px 0px'}}>
         <Typography variant='h6'>Choose Amount:</Typography>
-        <Container fixed sx={{margin : "50px 0"}}>
-          <Grid container spacing={3}>
+        <Container sx={{margin : "50px 0", maxWidth :'none'}}>
+          <Grid container spacing={0} sx={{margin : 0}}>
             {
               depositButtons.map((item, index) => {
                 return(

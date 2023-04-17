@@ -1,4 +1,4 @@
-import { Box, Button, Typography, Tab, styled } from '@mui/material'
+import { Box, Button, Tab, styled } from '@mui/material'
 import { TabPanel } from '@mui/lab';
 
 export const Wrapper1 = styled(Box)(({ theme }) => ({
@@ -13,9 +13,13 @@ export const Wrapper2 = styled(Box)(({ theme }) => ({
   width: '90%',
   margin: 'auto',
   textAlign: 'center',
-  // border: '1px solid rgb(54, 210, 205)',
   padding: '20px 0px',
-  // borderRadius: '10px',
+}));
+
+export const Wrapper2Box = styled(Box)(({ theme }) => ({
+  width: '100%', 
+  typography: 'body1', 
+  textAlign:'center'
 }));
 
 export const ButtonStyle = styled(Button)(({ theme }) => ({
@@ -34,10 +38,10 @@ export const ButtonStyle = styled(Button)(({ theme }) => ({
 }));
 
 export const MainTab = styled(Tab)(({ theme }) => ({
+  color : 'white',
   width: '45%',
   margin: 'auto',
   textAlign: 'center',
-  color : 'white',
   fontWeight: 'bold',
   fontSize: '15px',
   border: '1px solid #999',

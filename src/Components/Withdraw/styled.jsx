@@ -5,7 +5,7 @@ export const WithdrawWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const FilledButtonStyle = styled(Button)(({ theme }) => ({
-  width: '70%',
+  width: '60%',
   margin: '20px auto',
   textAlign: 'center',
   backgroundColor: 'rgba(54, 210, 205)',
@@ -51,4 +51,13 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
       },
     },
   },
+}));
+
+export const BoldTypography = styled(Typography)(({ theme }) => ({
+  fontWeight : 'bold',
+}));
+
+export const SmallWrapper = styled(Box)(({ theme }) => ({
+  width : '100%', 
+  margin: '30px 0px'
 }));

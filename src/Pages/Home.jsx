@@ -14,7 +14,13 @@ import BG from '../Assets/bg.png';
 
 function Home() {
   return (
-    <Box sx={{backgroundImage : `url(${BG})`, width:'1', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+    <Box sx={{
+      backgroundImage : `url(${BG})`, 
+      width:'1', 
+      backgroundSize: 'cover', 
+      backgroundPosition: 'center', 
+      backgroundAttachment: 'fixed'}}
+    >
       <TopBar />
       <BodyWrapper>
         <MainBodyWrapper>

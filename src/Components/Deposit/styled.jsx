@@ -5,8 +5,8 @@ export const DepositWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const ButtonStyle = styled(Button)(({ theme }) => ({
-  width: '100%',
-  margin: 'auto',
+  width: '95%',
+  margin: '5px auto',
   textAlign: 'center',
   border: '2px solid rgba(54, 210, 205)',
   color: 'rgba(54, 210, 205)',

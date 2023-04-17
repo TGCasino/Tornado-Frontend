@@ -1,4 +1,9 @@
-import { Box, styled, InputBase, Typography, alpha } from '@mui/material'
+import { AppBar, Box, styled, InputBase, Typography, alpha } from '@mui/material'
+
+export const MyAppBar = styled(AppBar)(({ theme }) => ({
+  backgroundColor : "#041935", 
+  borderBottom : '1px solid #333'
+}));
 
 export const LogoBox = styled(Box)(({ theme }) => ({
   width: { xs:'50px', md:'50px' },
@@ -18,12 +23,15 @@ export const InputWrapper = styled('div')(({ theme }) => ({
 }));
 
 export const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
+  color: '#ffff50',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 1),
     textAlign: 'center',
     transition: theme.transitions.create('width'),
     width: '100%',
+    '&::placeholder' : {
+      color: 'rgb(54, 210, 205)',
+    },
     [theme.breakpoints.up('sm')]: {
       width: '150px',
       '&:focus': {
