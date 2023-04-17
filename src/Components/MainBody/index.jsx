@@ -2,21 +2,24 @@ import React, {useState} from 'react';
 import {
   Box,
   Button,
-  Tab
+  Tab,
+  Tabs
 } from '@mui/material';
 import { 
   Wrapper1,
   Wrapper2,
-  Walletbutton
+  ButtonStyle,
+  MainTab,
+  MainTabPanel
 } from './styled';
 import {
   TabContext,
-  TabList,
   TabPanel
 } from '@mui/lab';
+import Deposit from '../Deposit';
 
 export default function MainBody() {
-  const [connected, setConnected] = useState(true)
+  const [connected, setConnected] = useState(false)
   const [tabId, setTabId] = useState('1');
 
   const handleChange = (event, newValue) => {
@@ -31,22 +34,30 @@ export default function MainBody() {
         <Wrapper1 
           sx={{ width: {lg: '60%', md : '70%', sm: '80%', xs : '90%'}}}
         >
-          <Walletbutton>Wallet Connect</Walletbutton>
+          <ButtonStyle>Wallet Connect</ButtonStyle>
         </Wrapper1> 
       ) 
       :
       (
         <Wrapper2>
-          <Box sx={{ width: '100%', typography: 'body1' }}>
+          <Box sx={{ width: '100%', typography: 'body1', textAlign:'center' }}>
             <TabContext value={tabId}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <TabList onChange={handleChange} aria-label="lab API tabs example">
-                  <Tab label="Item One" value="1" />
-                  <Tab label="Item Two" value="2" />
-                </TabList>
+              <Box>
+                <Tabs 
+                  onChange={handleChange} 
+                  aria-label="Tabs"
+                  indicatorColor="secondary"
+                >
+                  <MainTab label="Deposit" value="1"/>
+                  <MainTab label="Withdraw" value="2"/>
+                </Tabs>
               </Box>
-              <TabPanel value="1">Item One</TabPanel>
-              <TabPanel value="2">Item Two</TabPanel>
+              <MainTabPanel value="1">
+                <Deposit />
+              </MainTabPanel>
+              <MainTabPanel value="2">
+                Withdraw
+              </MainTabPanel>
             </TabContext>
           </Box>      
         </Wrapper2>
