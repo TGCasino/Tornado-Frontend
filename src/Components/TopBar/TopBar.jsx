@@ -7,7 +7,7 @@ import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import { 
   LogoBox,
   StyledInputBase,
-  Search
+  InputWrapper
 } from './styled';
 
 export default function TopBar() {
@@ -31,14 +31,14 @@ export default function TopBar() {
           >
             Grimace Coin Mixer
           </Typography>
-          <Search>
+          <InputWrapper>
             <StyledInputBase
               placeholder="Not connected"
               readOnly
               inputProps={{ 'aria-label': 'search' }}
               // value="0x.....123456798"
             />
-          </Search>
+          </InputWrapper>
         </Toolbar>
       </AppBar>
     </Box>

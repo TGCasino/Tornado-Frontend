@@ -4,7 +4,7 @@ export const LogoBox = styled(Box)(({ theme }) => ({
   width: { xs:'50px', md:'50px' },
 }));
 
-export const Search = styled('div')(({ theme }) => ({
+export const InputWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   border: '1px solid rgb(54, 210, 205)',

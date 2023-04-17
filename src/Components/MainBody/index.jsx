@@ -17,6 +17,7 @@ import {
   TabPanel
 } from '@mui/lab';
 import Deposit from '../Deposit';
+import Withdraw from '../Withdraw';
 
 export default function MainBody() {
   const [connected, setConnected] = useState(false)
@@ -56,7 +57,7 @@ export default function MainBody() {
                 <Deposit />
               </MainTabPanel>
               <MainTabPanel value="2">
-                Withdraw
+                <Withdraw />
               </MainTabPanel>
             </TabContext>
           </Box>      

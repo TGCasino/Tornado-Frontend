@@ -2,13 +2,16 @@ import React, {useState} from 'react';
 import { Typography, Box, Container, Grid } from '@mui/material';
 import {
   DepositWrapper,
-  ButtonStyle
+  ButtonStyle,
+  FilledButtonStyle
 } from './styled';
 
 const depositButtons = ['10', '100', '1000', '10000'];
 
 export default function Deposit() {
   const [balance, setBalance] = useState(0.0);
+  const [approve, setApprove] = useState(10000);
+  
   return (
     <DepositWrapper>
       <Typography variant='h4' sx={{fontWeight : 'bold'}}>Token</Typography>
@@ -34,6 +37,7 @@ export default function Deposit() {
       </Box>
       <Box sx={{width : '100%', margin : '10px 0px'}}>
         <Typography variant='h6'>Approve then deposit.</Typography>
+        <FilledButtonStyle>Approve {approve} GRM</FilledButtonStyle>
       </Box>
     </DepositWrapper>
   );

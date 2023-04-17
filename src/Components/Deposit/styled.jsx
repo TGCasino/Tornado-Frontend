@@ -11,7 +11,7 @@ export const ButtonStyle = styled(Button)(({ theme }) => ({
   border: '2px solid rgba(54, 210, 205)',
   color: 'rgba(54, 210, 205)',
   fontWeight: 'bold',
-  padding: '15px 0px',
+  padding: '10px 0px',
   borderRadius: '10px',
   fontSize: '20px',
   '&:hover':{
@@ -19,3 +19,18 @@ export const ButtonStyle = styled(Button)(({ theme }) => ({
   }
 }));
 
+export const FilledButtonStyle = styled(Button)(({ theme }) => ({
+  width: '70%',
+  margin: '20px auto',
+  textAlign: 'center',
+  backgroundColor: 'rgba(54, 210, 205)',
+  color: 'white',
+  fontWeight: 'bold',
+  padding: '15px 0px',
+  borderRadius: '10px',
+  fontSize: '15px',
+  '&:hover':{
+    backgroundColor: 'rgba(54, 210, 205)',
+    boxShadow: '0 4px 30px rgba(54,210,205,.6)',
+  }
+}));
